@@ -18,10 +18,10 @@ Main files:
 - Run the script: python3 deel.py
 
 ***How it was done***
-1- Connect to the Postgresql DB using sqlalchemy
-2- Read data from Json files in DataFrame
-3- Dump the data into postgresql DB using Pandas into the following tables: **Contracts** and **Invoices**
-4- Run the following queries using chunk method in pandas (similar to batching, I used batch_size=5, feel free to change it :) ) 
+- Connect to the Postgresql DB using sqlalchemy
+- Read data from Json files in DataFrame
+- Dump the data into postgresql DB using Pandas into the following tables: **Contracts** and **Invoices**
+- Run the following queries using chunk method in pandas (similar to batching, I used batch_size=5, feel free to change it :) ) 
 ***queries = {'Query 1':"""SELECT "RECEIVED_AT"::date as date, "IS_DELETED", count(*)
                     FROM contracts group by date, "IS_DELETED" order by date""",
             #Q2
@@ -35,9 +35,9 @@ Main files:
             'Query 4':"""SELECT "CLIENT_ID", "INVOICE_ID", min(invoices."RECEIVED_AT") "RECEIVED_AT"
                     FROM contracts JOIN invoices on contracts."CONTRACT_ID"=invoices."CONTRACT_ID"
                     WHERE contracts."IS_DELETED"::bool is false group by "CLIENT_ID", "INVOICE_ID" """}***
-5- After each runned query, a sleep of 10 seconds will be applied so user can see the results
+- After each runned query, a sleep of 10 seconds will be applied so user can see the results
 
 
 ***Challenges***
-1- No majore challenge happened, I just had some difficulties with keychain in my laptop (MacOs) that prevents me from pushing the code into github, so I had to upload the code manually
+- No majore challenge happened, I just had some difficulties with keychain in my laptop (MacOs) that prevents me from pushing the code into github, so I had to upload the code manually
  
