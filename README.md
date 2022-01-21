@@ -1,7 +1,7 @@
 # Documentation
 
--Question: How many hours this task took me to finish it
--Answer: Around 2 hours 
+- Question: How many hours this task took me to finish it
+- Answer: Around 2 hours 
 
 Main files:
 * docker-compose.yml
